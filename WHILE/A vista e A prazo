@@ -1,28 +1,33 @@
-//1. Uma loja utiliza o código V para compras a vista e o código P para compras a prazo. Faça um programa que receba o código e o valor das transações até receber o código X e o valor 0.Calcule e mostre:• O valor total das compras à vista;• O valor total das compras a prazo;• O valor total das compras efetuadas.
 #include <stdio.h>
 
 int main() {
-    int valor;
     char codigo;
-    
-    printf("As compras serão a vista ou a prazo?\n[V a vista]  [P  a prazo]\n");
-    scanf("%s", &codigo);
-    
-    printf("Qual o valor da transação?\n");
-    scanf("%d", &valor);
-    
-    while(codigo != 'X' && valor != 0){
-        printf("As compras serão a vista ou a prazo?\n[V a vista]  [P  a prazo]\n");
-    scanf("%s", &codigo);
-    
-    printf("Qual o valor da transação?\n");
-    scanf("%d", &valor);
+    float valor, total_vista = 0, total_prazo = 0, total_compras = 0;
+
+    printf("Digite o codigo (V para vista, P para prazo, X para sair): ");
+    scanf(" %c", &codigo);
+
+    while (codigo != 'X') {
+        printf("Digite o valor da transacao: ");
+        scanf("%f", &valor);
+
+        if (codigo == 'V') {
+            total_vista += valor;
+        } else if (codigo == 'P') {
+            total_prazo += valor;
+        } else {
+            printf("Codigo invalido.\n");
+        }
+
+        total_compras += valor;
+
+        printf("Digite o codigo (V para vista, P para prazo, X para sair): ");
+        scanf(" %c", &codigo);
     }
-    
-    printf("\n\nDEU CERTO!");
-    
-    
-    
-    
+
+    printf("Valor total das compras a vista: %.2f\n", total_vista);
+    printf("Valor total das compras a prazo: %.2f\n", total_prazo);
+    printf("Valor total das compras efetuadas: %.2f\n", total_compras);
+
     return 0;
 }
