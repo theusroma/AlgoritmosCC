@@ -37,7 +37,8 @@ int main() {
             printf("\n %d", idades[i]);
         }
     }
-    
+    maior = idades[1];
+    menor = idades [1];
     //apresente o maior número
     printf("\n\n\n\nApresente o maior número");
     for(i = 0; i < 5; i++){
