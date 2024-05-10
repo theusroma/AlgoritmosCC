@@ -21,18 +21,18 @@ int main(){
 	
 	printf("\nSeu nome é: %s", nome);
 	printf("\nSua idade é: %d", idade);
-	printf("\nO seu peso é: %f", peso);
+	printf("\nO seu peso é: %.2f", peso);
 	
 	if(idade > 16 && idade < 69){
 		if(peso > 50){
-			printf("\nVocê está apto a doar sangue!");
+			printf("\nSeu nome é %s, Você está apto a doar sangue!", nome);
 		}
 		else{
-			printf("\nVocê não está apto a doar sangue!");
+			printf("\nSeu nome é %s, Você não está apto a doar sangue!", nome);
 		}
 	}
 	else{
-		printf("\nVocê não está apto a doar sangue!");
+		printf("\nSeu nome é %s, você não está apto a doar sangue!", nome);
 	}
 	return 0;
 }
