@@ -6,18 +6,17 @@ daquele tamanho com asteriscos.
 
 int main() {
     
-    int i, j, lado, ladoo;
+    int i, j, lado;
     
     printf("Digite o tamanho do lado (ENTRE 2 E 20): ");
     scanf("%d", &lado);
     
     if(lado <= 20 && lado >= 2){
     
-    ladoo = lado - 1;
     for(i=0; i<lado; i++){
-            printf("\nX ");
-        for(j=0; j<ladoo; j++){
-            printf("x ");
+            printf("\n");
+        for(j=0; j<lado; j++){
+            printf("*");
         }
     }
     }
