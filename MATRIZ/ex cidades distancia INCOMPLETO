@@ -1,12 +1,8 @@
-/* Escreva um programa que leia o tamanho do lado de um quadrado e imprima um quadrado
-daquele tamanho com asteriscos.
- O programa deve funcionar para quadrados com lados de todos os tamanhos entre 2 e 20.*/
-
 #include <stdio.h>
 
 int main() {
     
-    int indiceum, indicedois, soma, i, j;
+    int indiceum, indicedois, distancia, i, j;
     int matriz[4][4] = {0, 10, 8, 20,
                         10, 0, 25, 30,
                         0, 25,  0, 12,
@@ -25,12 +21,13 @@ int main() {
     printf("\nDigite o primeiro indíce: ");
     scanf("%d", &indiceum);
     
-    indiceum = matriz[]
     
     printf("Digite o segundo indíce: ");
     scanf("\n%d", &indicedois);
     
+    distancia = matriz[indiceum - 1][indicedois - 1];
     
+    printf("A distância entre %d e %d é de %d", indiceum, indicedois, distancia);
     
 
     return 0;
