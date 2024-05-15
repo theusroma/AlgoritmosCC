@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    
+    int i, j, v[4], menor1, menor2, menor3, menor4;
+    int matriz[4][5] = {5, 4, 2, 8, 7,
+                        3, 6, 9, 1, 4,
+                        0, 3, 5, 2, 9,
+                        4, 9, 7, 6, 2};
+                        
+    menor1 = matriz[0][0];
+    menor2 = matriz[1][0];
+    menor3 = matriz[2][0];
+    menor4 = matriz[3][0];
+                        
+                        
+    
+    for(i=0; i<4; i++){
+        for(j=0; j<5; j++){
+            printf("%d  ", matriz[i][j]);
+            
+           
+            
+        if(menor1 >= matriz[0][j]){
+            menor1 = matriz[0][j];
+        }
+        
+        if(menor2 >= matriz[1][j]){
+            menor2 = matriz[1][j];
+        }
+        
+        if(menor3 >= matriz[2][j]){
+            menor3 = matriz[2][j];
+        }
+        
+        if(menor4 >= matriz[3][j]){
+            menor4 = matriz[3][j];
+        }
+        }
+        printf("\n");
+    }
+    printf("\n");
+    
+
+    for(i=0; i<4; i++){
+        v[0] = menor1;
+        v[1] = menor2;
+        v[2] = menor3;
+        v[3] = menor4;
+        printf("[%d]", v[i]);
+    }
+
+    return 0;
+}
