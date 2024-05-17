@@ -1,0 +1,17 @@
+/*Escreva um programa em C que declare e inicialize um array para armazenar o nome completo de 5
+funcionários de uma empresa, com até 30 caracteres cada nome, e utilize estrutura de repetição para apresentar
+na tela uma lista numerada contendo o nome de todos os funcionários*/
+#include <stdio.h>
+
+int main() {
+
+    int i, j, cont = 0;
+    char nome[5][31] = {"Matheus Santos", "Letícia Pacheco", "Fernanda Bande", "Sandy junior", "Park Jimin"};
+    
+    for(i=0; i<5; i++){
+        cont = cont + 1;
+        printf("\n%d- %s", cont, nome[i]);
+    }
+
+    return 0;
+}
