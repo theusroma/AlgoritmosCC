@@ -52,3 +52,65 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*OUTRO JEITO*/
+
+
+
+#include <stdio.h>
+
+int main() {
+
+int m[4][5] = {    5, 4, 2, 8, 7,
+                        3, 6, 9, 1, 4,
+                        0, 3, 5, 2, 9,
+                        4, 9, 7, 6, 2};
+                        
+int i, j, v[4], menor;
+
+    
+    for(i=0; i<4; i++){
+        for(j=0; j<5; j++){
+            printf("%d ", m[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for(i=0; i<4; i++){
+        for(j=0; j<5; j++){
+                menor = m[i][j];
+            if(m[0][j] < menor){
+            menor = m[0][j];
+                v[0] = menor;}
+                
+                if(m[1][j] < menor){
+            menor = m[1][j];
+                v[1] = menor;}
+                
+                if(m[2][j] < menor){
+            menor = m[2][j];
+                v[2] = menor;}
+                
+                if(m[3][j] < menor){
+            menor = m[3][j];
+                v[3] = menor;
+            }
+        }
+        printf("\n");
+    }
+    for(i=0; i<4; i++){
+    printf("%d ", v[i]);
+}
+    return 0;
+}
