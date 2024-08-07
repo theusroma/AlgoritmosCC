@@ -7,11 +7,22 @@
 */
 #include <stdio.h>
 
+    typedef struct {
+        int qtd_depend;
+        double gratificacao;
+        double salario_bruto;
+        char usa_plano;
+        char usa_valetr;
+        double valor_valetr;
+        double valor_plano;
+        
+    } funcionario;
+
 int main(void) {
     
     int qtd_depend;
     double salario_bruto, gratificacao;
-    char usa_valet, usa_plano;
+    char usa_valetr, usa_plano;
     
     // variaveis auxiliares
     double salario_bruto_6p, valor_valetr;
@@ -28,7 +39,7 @@ int main(void) {
     
     printf("Usa vale transporte? (S/N)");
     fflush(stdin);
-    scanf("%c", &usa_valet);
+    scanf("%c", &usa_valetr);
     
     printf("Usa plano de saúde? (S/N)");
     fflush(stdin);
@@ -41,7 +52,7 @@ int main(void) {
     // calculo do vale transporte, considerando o maximo
     // de 6% do salario bruto
     
-    if((usa_valetr == 'S' || usa_valetr 's')) {
+    if((usa_valetr == 'S' || usa_valetr == 's')) {
     double salario_bruto_6p, valor_valetr;
     
     if(valor_valetr > salario_bruto_6p){
