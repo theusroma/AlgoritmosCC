@@ -1,11 +1,6 @@
-/*
-- Quantidade de dependentes;
-- Salário Bruto;
-- Salário extra ou gratificação (quando existir);
-- Se irá utilizar VT (S ou N);
-- Se irá utilizar o plano de saúde da empresa (S ou N);
-*/
 #include <stdio.h>
+
+#define QTD_FUNC 3
 
     typedef struct {
         int qtd_depend;
@@ -15,50 +10,84 @@
         char usa_valetr;
         double valor_valetr;
         double valor_plano;
-        
     } funcionario;
+    
+        double calcula_valetr(double salario) {
+        double salario_bruto_6p;
+        double vale_transporte;
+        
+        salario_bruto_6p = salario * 0.06;
+        vale_transporte = 44 * 4.50;
+        
+        //
+        
+        if(vale_transporte > salario_bruto_6p){
+        vale_transporte = salario_bruto_6p;
+        }   
+        return vale_transporte;
+    }
 
 int main(void) {
     
-    int qtd_depend;
-    double salario_bruto, gratificacao;
-    char usa_valetr, usa_plano;
+    funcionario func[QTD_FUNC];
+     // variaveis auxiliares
+    double salario_bruto_6p;
     
-    // variaveis auxiliares
-    double salario_bruto_6p, valor_valetr;
+    
+    for (int i = 0; i < QTD_FUNC; i++){
     
     
     printf("Salario bruto: ");
-    scanf("%lf", &salario_bruto);
+    scanf("%lf", &func[i].salario_bruto);
     
     printf("Gratificaçao");
-    scanf("%lf", &gratificacao);
+    scanf("%lf", &func[i].gratificacao);
     
     printf("Quantos de dependentes: ");
-    scanf("%d", &qtd_depend);
+    scanf("%d", &func[i].qtd_depend);
     
     printf("Usa vale transporte? (S/N)");
     fflush(stdin);
-    scanf("%c", &usa_valetr);
+    scanf("%c", &func[i].usa_valetr);
     
     printf("Usa plano de saúde? (S/N)");
-    fflush(stdin);
-    scanf("%c", &usa_plano);
+    getchar();
+    scanf("%c", &func[i].usa_plano);
 
-    salario_bruto_6p = salario_bruto * 0.06;
-    valor_valetr = 44 * 4.50;
-    printf("6 porc: %lf vale transp: %lf", salario_bruto_6p, valor_valetr);
+    salario_bruto_6p = func[i].salario_bruto * 0.06;
+    func[i].valor_valetr = 44 * 4.50;
+    printf("6 porc: %lf vale transp: %lf", salario_bruto_6p, func[i].valor_valetr);
     
     // calculo do vale transporte, considerando o maximo
     // de 6% do salario bruto
     
-    if((usa_valetr == 'S' || usa_valetr == 's')) {
-    double salario_bruto_6p, valor_valetr;
+    if((func[i].usa_valetr == 'S' || func[i].usa_valetr == 's')) {
+        //se o funcionario recebe vale transporte, chamo a função que o calucula
+        //passando por parâmetro o valor do salario bruto e
+        //recebendo o valor do vale
+        func[i].valor_valetr = calcula_valetr(func[i].salario_bruto);
     
-    if(valor_valetr > salario_bruto_6p){
-        valor_valetr = salario_bruto_6p;
+} else {
+    //se o funcionario nao recebe, o valor é 0
+    func[i].valor_valetr = 0.0;
+        }
     }
-}
-
+    for(int i = 0; i < QTD_FUNC; i++){
+    printf("-----Funcionario %d-----", i);
+    printf("Valor do salario bruto: %.2lf\n", func[i].salario_bruto);
+    printf("Valor do vale transporte: %.2lf\n", func[i].valor_valetr);
+    }
     return 0;
 }
+
+/*
+    
+    if((func.usa_valetr == 'S' || func.usa_valetr == 's')) {
+    double salario_bruto_6p;
+    
+    if(func.valor_valetr > salario_bruto_6p){
+        func.valor_valetr = salario_bruto_6p;
+    }
+} else {
+    func.valor_valetr = 0.0;
+}*/
