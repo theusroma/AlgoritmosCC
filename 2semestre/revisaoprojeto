@@ -1,0 +1,53 @@
+/*
+- Quantidade de dependentes;
+- Salário Bruto;
+- Salário extra ou gratificação (quando existir);
+- Se irá utilizar VT (S ou N);
+- Se irá utilizar o plano de saúde da empresa (S ou N);
+*/
+#include <stdio.h>
+
+int main(void) {
+    
+    int qtd_depend;
+    double salario_bruto, gratificacao;
+    char usa_valet, usa_plano;
+    
+    // variaveis auxiliares
+    double salario_bruto_6p, valor_valetr;
+    
+    
+    printf("Salario bruto: ");
+    scanf("%lf", &salario_bruto);
+    
+    printf("Gratificaçao");
+    scanf("%lf", &gratificacao);
+    
+    printf("Quantos de dependentes: ");
+    scanf("%d", &qtd_depend);
+    
+    printf("Usa vale transporte? (S/N)");
+    fflush(stdin);
+    scanf("%c", &usa_valet);
+    
+    printf("Usa plano de saúde? (S/N)");
+    fflush(stdin);
+    scanf("%c", &usa_plano);
+
+    salario_bruto_6p = salario_bruto * 0.06;
+    valor_valetr = 44 * 4.50;
+    printf("6 porc: %lf vale transp: %lf", salario_bruto_6p, valor_valetr);
+    
+    // calculo do vale transporte, considerando o maximo
+    // de 6% do salario bruto
+    
+    if((usa_valetr == 'S' || usa_valetr 's')) {
+    double salario_bruto_6p, valor_valetr;
+    
+    if(valor_valetr > salario_bruto_6p){
+        valor_valetr = salario_bruto_6p;
+    }
+}
+
+    return 0;
+}
