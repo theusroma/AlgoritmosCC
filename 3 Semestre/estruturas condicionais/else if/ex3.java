@@ -21,7 +21,7 @@ public class Main {
             System.out.println("A temperatura em Farenheit é de: " + faren);
         }
         else if (opcao == 2){
-            kelvin = celsius + 273f;
+            kelvin = celsius + 273.15f;
             System.out.println("A temperatura em Kelvin é de: " + kelvin);
         }
 
