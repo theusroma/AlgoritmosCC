@@ -30,6 +30,10 @@ public class Main {
             case 5:
                 System.out.println("Maio");
                 break;
+
+            default:
+                System.out.println("Esse numero nao representa nenhum mes");
+                break;
         }
 
 
