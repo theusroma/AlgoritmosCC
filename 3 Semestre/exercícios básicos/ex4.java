@@ -9,6 +9,7 @@ public class Main {
 
         System.out.println("Digite um número: ");
         int num = leitor.nextInt();
+        
         int suc = num + 1;
         int ant = num - 1;
 
