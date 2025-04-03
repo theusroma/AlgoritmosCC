@@ -1,8 +1,10 @@
 public class Player {
-    int x, y;
+    int posX;
+    int posY;
 
-    public Player(int x, int y){
-        this.x = x;
-        this.y = y;
+    Player(int x, int y){
+        this.posX = x;
+        this.posY = y;
     }
+
 }
