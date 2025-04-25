@@ -1,10 +1,14 @@
 public class Mago extends Personagem{
-    Mago(String nome, float vida, float dano) {
-        super(nome, vida, dano);
+    Mago(String nome, float vida) {
+        super(nome, vida);
     }
+
     @Override
-    void atacar() {
-        System.out.println(nome + " connjura um feitiço!");
+    void atacar(Personagem alvo) {
+        int dano = 90;
+        System.out.println(nome + " conjura um feitiço!");
+        System.out.println("Dano causado: "+ dano);
+        alvo.receberDano(dano);
     }
 
 }
